@@ -4,12 +4,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <title>Laravel</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
+        <! --bootstrap cdn link -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <!-- Styles -->
         <style>
             html, body {
@@ -46,7 +46,8 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 20px;
+                /*font-size: 84px;  */
             }
 
             .links > a {
@@ -79,7 +80,21 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel<br><br>
+
+                    <form method="post" action="{{ route('user.file.store')}}" enctype="multipart/form-data">
+
+                       {{ csrf_field() }}
+                            
+                              <div class="form-group">
+                                 <label for="file">Upload File</label>
+                                 <input type="file" name="file" required>
+                              </div>
+                      
+                              <button type="submit" class="btn btn-primary">Submit</button>
+                              <a href="" class="btn btn-default">Cancel</a>
+                      </form>
+
                 </div>
 
                 <div class="links">
@@ -91,5 +106,6 @@
                 </div>
             </div>
         </div>
+
     </body>
 </html>

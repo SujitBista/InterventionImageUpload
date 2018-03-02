@@ -21,3 +21,6 @@ Route::post('user/createpost', 'User\PostController@store')->name('user.post.sto
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::post('/fileupload','FileUploadController@store')->name('user.file.store');
